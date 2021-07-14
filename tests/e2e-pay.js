@@ -24,5 +24,6 @@ describe('E2E Tests - Pay', () => {
         await (await $('#pay_saved_payees')).click()
         const message = await $('#alert_content')
         await expect(message).toHaveText('The payment was successfully submitted.')
+        await browser.pause(2000)
     })
 })
