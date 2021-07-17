@@ -1,11 +1,13 @@
 import {short, medium, long} from "../lib/timeouts";
 import {mobile, tablet, desktop} from "../lib/devices";
 
+
 describe('First Steps with Webdriverio', () => {
 
     it('Load Example Website',  async () => {
-        await browser.url('http://example.com/');
-        //await browser.pause(3000)
+        await browser.url('http://example.com/')
+        await browser.maximizeWindow()
+        await browser.pause(4000)
         await expect(browser).toHaveUrl('http://example.com/')
         await expect(browser).toHaveTitle('Example Domain')
     })
