@@ -1,4 +1,4 @@
-import { short } from '../lib/timeouts'
+import { short } from '../../lib/timeouts'
 
 describe('Browser Actions',  () => {
     it('Inputs', async () => {

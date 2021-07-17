@@ -4,6 +4,10 @@ class App {
         await browser.url('http://zero.webappsecurity.com/index.html')
     }
 
+    async logout() {
+        await browser.url('http://zero.webappsecurity.com/logout.html')
+    }
+
 
 }
 

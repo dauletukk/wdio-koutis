@@ -1,5 +1,5 @@
-import {short, medium, long} from "../lib/timeouts";
-import {mobile, tablet, desktop} from "../lib/devices";
+import {short, medium, long} from "../../lib/timeouts";
+import {mobile, tablet, desktop} from "../../lib/devices";
 
 
 describe('First Steps with Webdriverio', () => {
