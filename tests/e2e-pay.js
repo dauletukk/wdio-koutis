@@ -15,9 +15,7 @@ describe('E2E Tests - Pay', () => {
 
         await App.openHomepage()
         await NavBar.clickSignIn()
-        await LoginPage.formVisible()
-        await LoginPage.fillForm('username', 'password')
-        await LoginPage.submitForm()
+        await LoginPage.login()
         await NavBar.insideNavbarIsVisible()
     })
 

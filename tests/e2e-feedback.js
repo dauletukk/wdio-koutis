@@ -2,8 +2,6 @@ import App from '../page-objects/App'
 
 describe('E2E - Feedback',  () => {
     it('Should load feedback form', async () => {
-        await browser.maximizeWindow()
-        //await browser.url('http://zero.webappsecurity.com/index.html')
         await App.openHomepage()
         await (await $('#feedback')).waitForExist()
         await (await $('#feedback')).click()

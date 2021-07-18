@@ -1,6 +1,7 @@
 import LoginPage from "../page-objects/pages/LoginPage";
 import App from "../page-objects/App";
 import NavBar from "../page-objects/components/NavBar";
+import Expected from "../page-objects/Expected";
 
 describe('E2E Tests - Login / Logout Flow', () => {
     it('Should not login with invalid credentials', async () => {
@@ -21,7 +22,7 @@ describe('E2E Tests - Login / Logout Flow', () => {
         await LoginPage.fillForm('invalid', 'invalid')
         await LoginPage.submitForm()
         const messageError = await LoginPage.error
-        await expect(messageError).toHaveText('Login and/or password are wrong.')
+        await expect(messageError).toHaveText(Expected.messageErrorText)
     })
 
     it('Should login with valid credentials', async () => {
@@ -35,9 +36,10 @@ describe('E2E Tests - Login / Logout Flow', () => {
         // await (await $('.nav-tabs')).waitForExist()
         await App.openHomepage()
         await NavBar.clickSignIn()
-        await LoginPage.formVisible()
-        await LoginPage.fillForm('username', 'password')
-        await LoginPage.submitForm()
+        // await LoginPage.formVisible()
+        // await LoginPage.fillForm('username', 'password')
+        // await LoginPage.submitForm()
+        await LoginPage.login()
         await NavBar.insideNavbarIsVisible()
 
     })

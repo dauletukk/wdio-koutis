@@ -22,5 +22,17 @@ describe('E2E Tests - Transaction Filter', () => {
         await NavBar.insideNavbarIsVisible()
     })
 
+    it('Should load help content', async () => {
+        await (await $('.icon-cog')).click()
+        await (await $('#help_link')).waitForExist()
+        await (await $('#help_link')).click()
+        const title = await $('div.span8 > h3')
+        await expect(title).toHaveText('How do I log into my account?')
+        await (await $('//a[.=\'How do I transfer funds?\']')).click()
+        await expect(title).toHaveText('How do I transfer funds?')
+        await (await $('//a[.=\'How do I pay bills?\']')).click()
+        await expect(title).toHaveText('How do I pay bills?')
+
+    })
 
 })

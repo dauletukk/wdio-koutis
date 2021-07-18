@@ -14,9 +14,7 @@ describe('E2E Tests - Currency Exchange', () => {
         // await (await $('.nav-tabs')).waitForExist()
         await App.openHomepage()
         await NavBar.clickSignIn()
-        await LoginPage.formVisible()
-        await LoginPage.fillForm('username', 'password')
-        await LoginPage.submitForm()
+        await LoginPage.login()
         await NavBar.insideNavbarIsVisible()
     })
 

@@ -2,6 +2,14 @@ import Base from "../Base";
 
 class LoginPage extends Base {
 
+    get loginUserName(){
+        return 'username'
+    }
+
+    get loginPassword() {
+        return 'password'
+    }
+
     get loginForm() {
         return $('#login_form')
     }
@@ -27,12 +35,19 @@ class LoginPage extends Base {
         await (await this.loginForm).waitForExist()
     }
 
-    async fillForm(username, password) {
-        await (await this.usernameInput).setValue(username)
+    async fillForm(name, password) {
+        await (await this.usernameInput).setValue(name)
         await (await this.passwordInput).setValue(password)
     }
 
     async submitForm() {
+        await (await this.submitButton).click()
+    }
+
+    async login() {
+        await (await this.loginForm).waitForExist()
+        await (await this.usernameInput).setValue(this.loginUserName)
+        await (await this.passwordInput).setValue(this.loginPassword)
         await (await this.submitButton).click()
     }
 
