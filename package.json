@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+        "test": "wdio wdio.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/register": "^7.14.5",
     "@wdio/allure-reporter": "^7.7.6",
+    "@wdio/browserstack-service": "^7.7.8",
     "@wdio/dot-reporter": "^7.7.5",
     "@wdio/local-runner": "^7.7.6",
     "@wdio/mocha-framework": "^7.7.5",
